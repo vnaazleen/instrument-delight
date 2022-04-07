@@ -1,0 +1,19 @@
+td {
+    vertical-align: middle;
+}
+
+button {
+    margin: 5px;
+}
+
+.edit {
+    color: white;
+}
+
+.add {
+    background-color: #FF9F45;
+    color: white;
+    font-size: large;
+    font-weight: 500;
+    vertical-align: middle;
+}

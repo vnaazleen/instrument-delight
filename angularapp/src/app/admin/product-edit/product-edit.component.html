@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row mt-5">
+
+        <div class="image col-md-5 col-sm-12">
+            <img src="../../../assets/images/edit_product_img.jpg" height="250">
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <h3 class="title"> EDIT PRODUCT </h3>
+            <form #addProductForm="ngForm" (ngSubmit)="updateProduct()">
+                <input type="text" required class="form-control" id="name" name="productName" [(ngModel)]="product.productName" value="{{ product.productName }}">
+                <input type="number" required class="form-control" id="price" name="price" [(ngModel)]="product.price" value="{{ product.price }}">
+                <textarea class="form-control" required id="description" name="description" rows="3" [(ngModel)]="product.description" value="{{ product.description }}"></textarea>
+                <input type="url" required class="form-control" id="imageUrl" name="imageUrl" [(ngModel)]="product.imageUrl" value="{{ product.imageUrl }}">
+                <input type="number" required class="form-control" id="quantity" name="quantity" [(ngModel)]="product.quantity" value="{{ product.quantity }}">
+
+                <button type="submit" class="btn">Edit</button>
+            </form>
+        </div>
+
+    </div>
+</div>

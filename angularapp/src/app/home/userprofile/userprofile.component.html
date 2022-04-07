@@ -1,0 +1,73 @@
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 pb-5">
+            <!-- Account Sidebar-->
+            <div class="author-card pb-3">
+                <div class="author-card-cover" style="background-image: url(https://media.istockphoto.com/vectors/falling-leaves-in-autumn-landscape-vector-id1274743772?k=20&m=1274743772&s=612x612&w=0&h=p0bR_NqpLtC_4kkMwh78RC86sQnWgMp1EWNnJywxkjw=)"><a class="btn btn-style-1 btn-white btn-sm" href="#" data-toggle="tooltip" title="" data-original-title="You currently have 290 Reward points to spend"><i class="fa fa-award text-md"></i></a></div>
+                <div class="author-card-profile">
+                    <div class="author-card-avatar"><img src="../assets/images/profilepic.jpg" alt="Upload Image">
+                    </div>
+                   
+                    <div class="author-card-details">
+                        <h5 class="author-card-name text-lg">{{userDetails.name}}</h5><span class="author-card-position">Joined February 06, 2017</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wizard">
+                <nav class="list-group list-group-flush">
+                  <a class="list-group-item active"    href="#" ><i class="fe-icon-user text-muted"placeholder=""></i>Profile Settings</a>
+  
+                    <a class="list-group-item" [routerLink]="['/myorders/{{userDetails.username}}']" placeholder="">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div><i class="fe-icon-shopping-bag mr-1 text-muted"></i>
+                                <div class="d-inline-block font-weight-medium text-uppercase">Orders List</div>
+                            </div><span class="badge badge-secondary">6</span>
+                        </div>
+                    </a>
+                  
+                    <a class="list-group-item" [routerLink]="['/cart/{{userDetails.username}}']" placeholder="">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div><i class="fe-icon-heart mr-1 text-muted"></i>
+                                <div class="d-inline-block font-weight-medium text-uppercase">My Wishlist</div>
+                            </div><span class="badge badge-secondary">3</span>
+                        </div>
+                    </a>
+                  
+                </nav>
+            </div>
+        </div>
+        <!-- Profile Settings-->
+        <div class="col-lg-8 pb-5">
+            <form class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="account-fn">First Name</label>
+                        
+                        <input class="form-control" type="text" id="account-fn" value="{{userDetails.name}}"disabled="">
+                    </div>
+                </div>
+              
+              
+                <div class="col-md-12">
+                  <br>
+                    <div class="form-group">
+                        <label for="account-email">E-mail Address</label>
+                        <input class="form-control" type="email" id="account-email" value="{{userDetails.username}}" disabled="">
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                  <br>
+                    <div class="form-group">
+                        <label for="account-phone">Phone Number</label>
+                        <input class="form-control" type="text" id="account-phone" value="{{userDetails.mobilenumber}}"disabled="" >
+                    </div>
+                </div>
+               
+                
+                
+            </form>
+        </div>
+    </div>
+  </div>

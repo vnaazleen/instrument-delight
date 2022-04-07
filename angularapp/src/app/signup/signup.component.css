@@ -1,0 +1,43 @@
+#signupBox{
+    max-width:700px;
+}
+.signuptxt{
+    color:orange ;
+    margin-left:185px;
+    padding-top :50px;
+    margin-top:60px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-family: Arial,serif;
+}
+.emps{
+    
+    width:100%; 
+    border-radius:10px; 
+    margin-left:98px;
+    
+}
+
+.submit{
+    margin-left:220px;
+    color:white;
+    background-color:orange;
+    border:none;
+    margin-bottom: 10px;
+    cursor:pointer;
+    font-size: 20px;
+    
+}
+
+.member{
+    font-size:14px;
+   margin-left: 124px;
+   padding:20px;      
+}
+#signinLink{
+    color:orange;
+    cursor:pointer;
+}
+.img{
+    margin-top: 100px;
+}

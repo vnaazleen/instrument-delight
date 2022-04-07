@@ -1,0 +1,77 @@
+<div style="min-width:100%; min-height:200%;">
+    <br>
+    <div class="row">
+      <div class="col-6">
+    <div class="container" id="signupBox"style="max-width:400px;">
+      <h2 class="textual signuptxt">SIGN UP</h2>
+      <form #Registrationform="ngForm" (ngSubmit)="registerUser()">
+        <small [class.text-danger]="msg.status==500" class="emps" style="color:red">{{msg}}</small>
+        <div class="form-group">
+          
+          <input type="email" class="form-control emps " id="email" placeholder="Enter Email" name="email"
+            [(ngModel)]="user.username" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched">
+  
+          <div *ngIf="email.errors && (email.invalid && email.touched)">
+            <small class="text-danger emps " *ngIf="email.errors['required']">Email Id is required</small>
+            <small class="text-danger emps " *ngIf="email.errors['pattern']"> Enter a valid emailID</small>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          
+          <input type="text" class="form-control emps a" placeholder="Enter Username " name="username" id="username"
+           [(ngModel)]="user.name"
+            #username="ngModel" required [class.is-invalid]="username.invalid && username.touched">
+          <small class="text-danger emps" [class.d-none]="username.valid || username.untouched">User Name is required
+  
+          </small>
+        </div>
+        <br>
+  
+        <div class="form-group">
+          
+          <input type="text" class="form-control emps a " placeholder="Enter Mobile Number" name="mobilenumber" id="mobilenumber" [(ngModel)]='user.mobilenumber'
+            required pattern="[6-9]{1}[0-9]{9}" #mobilenumber="ngModel"
+            [class.is-invalid]="mobilenumber.invalid && mobilenumber.touched">
+            <div *ngIf="mobilenumber.errors && (mobilenumber.invalid && mobilenumber.touched)">
+              <small class="text-danger emps" *ngIf="mobilenumber.errors['required']">Mobile Number is required</small>
+              <small class="text-danger emps" *ngIf="mobilenumber.errors['pattern']"> Enter a valid Mobile Number</small>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+          
+          <input type="password" class="form-control emps a" placeholder="Enter Password" name="password" id="password"
+            [(ngModel)]="user.password" #password="ngModel" required
+            [class.is-invalid]="(password.invalid && password.touched) ">
+          <small class="text-danger emps" [class.d-none]="password.valid || password.untouched">Password is required
+          </small>
+        </div>
+        <br>
+        <div class="form-group">
+     
+          <input type="password" class="form-control emps a" placeholder="Confirm Password" name="cpassword" id="confirmpassword"
+            #cpassword="ngModel" (ngModel)="user.password" required
+            [class.is-invalid]="cpassword.invalid && cpassword.touched ">
+          <small class="text-danger emps" [class.d-none]="(cpassword.value==password.value) || cpassword.untouched">
+            Confirm Password don't match
+          </small>
+        </div>
+        <br>
+        
+        <button [disabled]="Registrationform.form['invalid'] || (cpassword.value!==password.value)" type="submit" id="submitButton" class="btn btn-info submit">SIGN UP</button>
+        <br>
+        <small class="float-right btextual member" [routerLink]="['/login']">Already a member? <span id="signinLink">Click here</span></small>
+  
+  
+      </form>
+  
+  
+    </div>
+  </div>
+  <div class="col-5">
+    <img src="assets/images/1.png" class="img-responsive img"  style="object-fit:cover">
+  </div>
+  </div>
+  </div>

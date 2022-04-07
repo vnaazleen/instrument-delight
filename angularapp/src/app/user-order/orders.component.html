@@ -1,0 +1,19 @@
+<div *ngIf="_order.length;else elseBlock;"class="orderstable" id="instrumentOrderBody">
+    <table class="center">
+            <tr id="heads">
+              <th class="th1">Product Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th class="th3">Total Price</th>
+            </tr>
+          <tbody>
+            <tr *ngFor="let order of _order!">
+              <td>{{order.productName}}</td>
+              <td>{{order.price}}</td>
+              <td>{{order.quantity}}</td>
+              <td>{{order.totalPrice}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <ng-template #elseBlock><span class = "emptyorders">You do not have any Orders!</span></ng-template>

@@ -1,0 +1,27 @@
+
+@media only screen
+and (min-width : 998px)   
+{ 
+    .spread-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}  
+
+.navbar {
+    background-color: #FF9F45 !important;
+}
+
+.navbar-brand {
+    font-size: x-large;
+    font-family: cursive;
+}
+
+.nav-link {
+    font-size: large !important;
+    color: white !important;
+}
+
+.material-icons {
+    font-size: x-large !important;
+}

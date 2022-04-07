@@ -1,0 +1,50 @@
+<div style="min-width:100%; min-height:300%;">
+    <br> <br> <br> <br> <br> <br>
+   <div class="row">
+     <div class="col-6">
+    <div class="container" id="loginBox" >
+      <h2 class="textual logintxt" >LOGIN</h2>
+      
+      <form #loginform="ngForm"(ngSubmit)="loginUser()" >
+       
+        <small class="text-danger emps a">{{msg}}</small> 
+        <div class="form-group">
+          
+          <input type="email" id="email" class="form-control emps" id="email" placeholder="Email" name="email"[(ngModel)]="user.username" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+         
+          <div *ngIf="email.errors && (email.invalid && email.touched)">
+            <small class="text-danger emps" 
+            *ngIf="email.errors['required']">Email Id is required</small>
+            <small class="text-danger emps" *ngIf="email.errors['pattern']"> Enter a valid emailID</small>
+          </div>
+        </div>
+        <div class="form-group">
+          
+          <br>
+          <input type="password" class="form-control emps" id="password" placeholder="Password" name="password"[(ngModel)]="user.password" #password="ngModel" required [class.is-invalid]="password.invalid && password.touched"> 
+          <div *ngIf="password.errors && (password.invalid && password.touched)">
+            <small class="text-danger emps" 
+            *ngIf="password.errors['required']">Password is required</small>
+            <small class="text-danger emps" *ngIf="password.errors['pattern']"></small>
+          </div>
+        </div>
+        <br>
+        
+        <button [disabled]="loginform.form['invalid']" id="SubmitButton" type="submit" class="btn btn-info submit" >LOGIN<span></span></button>
+      </form>
+      
+     <small class="Newuser"
+      [routerLink]="['/signup']" >New User?<span id="signupLink"> Click here</span></small> 
+  
+  
+      <!--<small class="float-right"
+      Click()="gotoregistration()">New User ? Register here</small>-->
+  </div>
+  </div>
+  <div class="col-6">
+    <img src="assets/images/login.png" class="img-responsive"  style="object-fit:cover">
+  </div>
+  </div>
+  </div>
+  
+  

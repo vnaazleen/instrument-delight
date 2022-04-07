@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row mt-5">
+
+        <div class="image col-md-5 col-sm-12">
+            <img src="../../../assets/images/edit_product_img.jpg" height="250">
+        </div>
+
+        <div class="col-md-6 col-sm-12"id="addInstrumentBody">
+            <h3 class="title"> ADD A NEW PRODUCT </h3>
+            <form #addProductForm="ngForm" (ngSubmit)="addProduct()">
+                <input type="text" required class="form-control"  placeholder="Product Name" name="productName"id="instrumentName" [(ngModel)]="product.productName">
+                <input type="number" required class="form-control" placeholder="Product Price" name="price"id="instrumentPrice" [(ngModel)]="product.price">
+                <textarea class="form-control" required  name="description"id="instrumentDescription" rows="3" placeholder="Product Description" [(ngModel)]="product.description"></textarea>
+                <input type="url" required class="form-control"  placeholder="Image URL" name="imageUrl"id="instrumentImageURL" [(ngModel)]="product.imageUrl">
+                <input type="number" required class="form-control"  placeholder="Product Quantity" name="quantity"id="instrumentQuantity" [(ngModel)]="product.quantity">
+
+                <button type="submit" class="btn"id="addInstrumentButton">Add</button>
+            </form>
+        </div>
+
+    </div>
+</div>

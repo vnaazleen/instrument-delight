@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="product row mt-5">
+        <div class="col-md-4 col-sm-12">
+           <img class="image" src="{{ product.imageUrl }}"/>
+        </div>
+        <div class="col-md-7 col-sm-12 mt-2 ml-2">
+              <h1>{{ product.productName }}</h1>
+            <p>{{ product.description }}</p>
+            <p><b>Price: ₹{{ product.price }}</b></p>
+  
+            <form #addCartForm="ngForm" >
+              <div class="row">
+                <div class="form-group col-3">
+                  <label for="quantity">Quantity</label>
+                  <input type="number" required class="form-control" id="quantity" name="quantity" [(ngModel)]="product.quantity"min="1" max="{{product.quantity}}" value="{{product.quantity}}">
+                </div>
+              </div>
+              <div class="row mt-2">
+                  <div class="col-5">
+                      <button class="btn btn-warning ml-3" type="submit" (click)="addToCart()">Add to Cart</button>
+                  </div>
+                  <div class="col-5">
+                    <button class="btn btn-primary" type="submit" (click)="PlaceOrder()">Place order</button>
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div>

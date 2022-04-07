@@ -1,0 +1,21 @@
+<div *ngIf="_adminorders.length;else elseBlock;"class="orderstable" id="adminOrderBody">
+    <table class="center">
+            <tr id="heads">
+              <th class="th1">Order ID</th>
+              <th>User ID</th>
+              <th>Instrument Name</th>
+              <th>Price</th>
+              <th class="th3">Quantity</th>
+            </tr>
+          <tbody>
+            <tr *ngFor="let order of _adminorders!">
+              <td>{{order.orderID}}</td>
+              <td>{{order.userId}}</td>
+              <td>{{order.productName}}</td>
+              <td>{{order.price}}</td>
+              <td>{{order.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <ng-template #elseBlock><span class = "emptyorders">You do not have any Orders!</span></ng-template>

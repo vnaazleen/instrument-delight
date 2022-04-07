@@ -1,0 +1,13 @@
+h3{
+    text-align: center;
+    padding: 8px;
+}
+
+.products{
+    display: inline-flex;
+    width: min-content;
+    position: absolute;
+}
+body{
+    position: absolute;
+}

@@ -1,0 +1,51 @@
+<div class="container"id="adminDashboard">
+
+    <div class="row">
+
+
+        <div class="col-md-7 col-sm-12">
+            <div class="table mt-5">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Instrument Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let product of _productList">
+                        <td><img src="{{ product.imageUrl }}" height="100" ></td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>
+                            <button class="edit btn btn-warning btn-sm" (click)="goToEditProduct(product.productId)">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="delete btn btn-danger btn-sm" (click)="deleteProduct(product.productId)">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12">
+            <img src="../../../assets/images/admin_dashboard_img.jpg" height="300">
+            <button class="btn add"id="addInstrumentButton" (click)="goToAddProduct()">
+                <span class="material-icons">
+                    add_shopping_cart
+                </span>
+                Add Product
+            </button>
+        </div>
+
+    </div>
+
+
+</div>

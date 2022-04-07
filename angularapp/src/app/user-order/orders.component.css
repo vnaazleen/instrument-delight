@@ -1,0 +1,36 @@
+.center{
+    width: 100%;
+ }
+ .orderstable{
+     margin: 20px 15px;
+ }
+ #heads{
+     background-color: rgb(255, 164, 27);
+   }
+ .th1{
+     border-top-left-radius: 10px;
+    
+   }
+ .th3{
+     border-top-right-radius: 10px;
+ }
+ th,td{
+     padding: 10px 15px;
+     
+     text-align: center;
+   }
+ th{
+     color: rgb(243, 242, 241);
+     font-weight: normal;
+ }
+ tbody{
+     background-color: rgb(241,242,251);
+ }
+ .emptyorders {
+  display: flex; 
+  justify-content: center;
+  text-align: center;
+  margin-top: 10%;
+  font-size: x-large;
+  color: #777777;
+}
